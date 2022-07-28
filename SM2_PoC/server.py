@@ -9,13 +9,8 @@ client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 client.bind((HOST, PORT))
 
 print("客户端链接成功")
-
-
-
-
-
-d = 7
-n = 23
+d = 9
+n = 67
 k,addr = client.recvfrom(1024)
 k = int(k.decode(),16)
 v,addr = client.recvfrom(1024)

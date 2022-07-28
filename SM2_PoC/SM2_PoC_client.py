@@ -1,24 +1,28 @@
 import sm3
 import sys
 import json
-import random
 import socket
-from os.path import commonprefix
+
+
+
+
+
+
+HOST = '127.0.0.1'
+PORT = 8050
+client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+
 
 d = 5
 n = 23
-name = 23456
-password = 65432
-
-HOST = '127.0.0.1'
-PORT = 1234
-client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
+name = liujinyuan
+password = 246319
 try:
     client.connect((HOST, PORT))
-    print("Client connected!")
+    print("客户端链接成功")
 except Exception:
-    print('Connection failed!')
+    print('连接失败')
     sys.exit()
 else:
     # 客户端计算key-value
@@ -26,7 +30,7 @@ else:
     k = h[:2]
     v = str((pow(int(h,16),d))%n)
 
-    # 向服务端发送k与v
+
     addr = (HOST, PORT)
     client.sendto(k.encode('utf-8'), addr)
     client.sendto(v.encode('utf-8'), addr)
@@ -37,7 +41,7 @@ else:
     json_v,addr = client.recvfrom(1024 * 5)
     json_v = json_v.decode('utf-8')
     S = json.loads(json_v)
-    print("S:",S)
+    print("Sig:",S)
 
     # 计算并检查H_b是否在S中
     H_b = (pow(H_ab,sm3.inv(d,n-1)))%n
@@ -47,6 +51,6 @@ else:
         if b == H_b:
             tmp = 1
     if tmp == 0:
-        print('Account:',name,'Safe!')
+        print('账户',name,'安全')
     else:
-        print('Account:',name,'Divulged')
+        print('账户',name,'不通过')

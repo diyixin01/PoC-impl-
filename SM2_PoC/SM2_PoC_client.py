@@ -3,19 +3,12 @@ import sys
 import json
 import socket
 
-
-
-
-
-
-HOST = '127.0.0.1'
+HOST = '127.0.0.1'   #本地地址
 PORT = 8050
 client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-
-
-d = 5
-n = 23
+d = 7
+n = 65
 name = liujinyuan
 password = 246319
 try:

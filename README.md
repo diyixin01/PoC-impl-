@@ -14,7 +14,7 @@
 
 
 
-随后输入py SM2_PoC_server.py运行程序：
+随后输入py server.py运行程序：
 
 ![image](https://user-images.githubusercontent.com/75195549/181517516-71a86a7e-e426-41b0-930d-ca9f367dd206.png)
 
@@ -94,7 +94,58 @@ close（clienfd）
 
 # 代码分析
 
-# 
+# server.py
+## Data receive
+
+![image](https://user-images.githubusercontent.com/75195549/181522008-6cd28c11-1e89-477a-8573-ecdd2c772e92.png)
+
+
+## create k-value table
+
+
+![image](https://user-images.githubusercontent.com/75195549/181522138-2296e947-4a33-49e5-a9d2-0a5248b8abeb.png)
+
+
+
+## compute h^ab
+
+![image](https://user-images.githubusercontent.com/75195549/181522268-c36fc2a0-43cf-41b1-97a2-64c86ab60cea.png)
+
+
+## send H_ab and data set
+
+![image](https://user-images.githubusercontent.com/75195549/181522379-16da104e-331d-47a9-a752-97961c3f777b.png)
+
+
+# client.py
+## compute key-value
+
+![image](https://user-images.githubusercontent.com/75195549/181522567-a254ded1-cc62-49a2-bf00-984fef899c7b.png)
+
+
+
+## send k and v
+
+
+
+![image](https://user-images.githubusercontent.com/75195549/181522688-e0e1b70f-5cd3-48a3-acfa-0e5c6f6c38fc.png)
+
+
+## receive H_ab and data set S
+
+
+![image](https://user-images.githubusercontent.com/75195549/181522786-2b385fa8-2980-4177-9bb5-f241a9b525a0.png)
+
+
+
+## detection
+
+
+![image](https://user-images.githubusercontent.com/75195549/181522846-aebd8474-3d62-42a8-b14c-33e87207d9c4.png)
+
+
+
+
 
 
 # 结果展示

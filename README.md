@@ -35,7 +35,7 @@ socket是“open—write/read—close”模式的一种实现，那么socket就�
 
 
 
-#服务器端伪代码
+# 服务器伪代码
 ```
 listenfd=socket（.....）；
 bind（listenfd，本机的ip和知名端口，....）;
@@ -49,10 +49,52 @@ while（true）
 ```
 
 
+# 客户端伪代码
+
+```
+clienfd=socekt（.....）;
+connect（clienfd，服务器的ip和port，.....）；
+send（cliend，数据）； //这里的发送就相当于上面的read（）
+receive（clienfd，....）；
+close（clienfd）
+```
+
+
+# 实验原理
+
+第一步：服务器生成数据
+
+
+![image](https://user-images.githubusercontent.com/75195549/181519727-b188c7aa-6d40-4a76-a862-cbaa92dc445a.png)
+
+
+第二步：客户端生成数据并发送给服务器
+
+
+
+![image](https://user-images.githubusercontent.com/75195549/181519985-d176bd9e-58aa-47bf-a6d1-ed8a8ff5d3f1.png)
+
+
+第三步：找寻数据组
 
 
 
 
+![image](https://user-images.githubusercontent.com/75195549/181520052-d28d5f46-7b85-4346-a347-7a8fadd93856.png)
+
+
+第四步：验证
+
+
+
+![image](https://user-images.githubusercontent.com/75195549/181520118-f7eb0362-c3a3-4fef-a0fe-66b66c5ed279.png)
+
+
+
+
+# 代码分析
+
+# 
 
 
 # 结果展示
